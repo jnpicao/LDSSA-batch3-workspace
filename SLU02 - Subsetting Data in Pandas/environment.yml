@@ -1,4 +1,3 @@
-name: SLU01
 channels:
   - conda-forge
   - defaults

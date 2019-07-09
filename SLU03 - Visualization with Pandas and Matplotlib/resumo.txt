@@ -1,0 +1,89 @@
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+%matplotlib #inline will set up the notebook to be used with matplotlib.
+
+data.plot.scatter(x='n_items', y='sales');
+
+#Change the default chart size to 8 inches width and 8 inches height
+plt.rcParams["figure.figsize"] = [14, 14]
+
+
+data.plot.scatter(x='n_items', y='sales');
+
+
+data_indexed[data_indexed.country=='Germany'].sales.plot(label="Germany")
+data_indexed[data_indexed.country=='France'].sales.plot(label="France")
+plt.legend();
+
+
+# same thing as data.groupby('country')['sales'].sum().plot(kind="barh");
+data.groupby('country')['sales'].sum().plot.barh();
+
+
+# same thing as data[data.country=='EIRE'].sales.plot(kind="hist");
+data[data.country=='EIRE'].sales.plot.hist(xlim=(0,7000), bins=70);
+
+# kind="boxplot" doesnt work since its not part of the pandas.plot api for legacy reasons
+data.boxplot(column="sales", by="country", vert=False);
+
+
+plt.style.available
+plt.style.use('seaborn')
+data[data.country=='EIRE'].sales.plot.hist(xlim=(0,7000), bins=70);
+
+
+plt.style.use('ggplot')
+
+#Fully customized plot
+data_indexed[data_indexed.country=='Germany'].sales.plot(label="Germany")
+data_indexed[data_indexed.country=='France'].sales.plot(label="France")
+plt.ylim(0, 12350)
+plt.legend()
+plt.title("Daily sales in France and Germany", size=25)
+plt.xlabel("Date", size=20)
+plt.ylabel("Sales (GPB)", size=20)
+plt.figtext(.3, .01, "Source: Online Retail Dataset Transactions between 01/12/2010 and 09/12/2011");
+
+
+Questions:
+
+Change the default chart size to 8 inches width and 8 inches height
+#aggregate and grouping
+average cost over time
+median revenue vary by movie genre?
+Label the x-axis
+How is the variable vote_average distributed? Histogram
+Change the default plot style to ggplot
+
+
+
+
+
+
+
+budget: Movie budget (in $).
+    genre: Genre the movie belongs to.
+    original_language: Language the movie was originally filmed in.
+    production_company: Name of the production company.
+    production_country: Country where the movie was produced.
+    release_year: Year the movie was released.
+    revenue: Movie ticket sales (in $).
+    runtime: Movie duration (in minutes).
+    title: Movie title.
+    vote_average: Average rating in MovieLens.
+    vote_count: Number of votes in MovieLens.
+    release_year: Year the movie was released
+
+
+
+
+
+
+
+
+
+
+

@@ -102,3 +102,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+~$bootcamp_status.xlsx

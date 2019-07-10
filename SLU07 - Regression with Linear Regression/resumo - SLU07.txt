@@ -1,0 +1,11 @@
+
+
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression()
+lr.fit(X_pln_df, y_pln_df)
+coefficients = lr.coef_
+intercept = lr.intercept_
+betas = np.concatenate((np.array([intercept]), coefficients))
+
+

@@ -103,3 +103,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 ~$bootcamp_status.xlsx
+
+# Capstone train data
+./Capstone/data/train.csv

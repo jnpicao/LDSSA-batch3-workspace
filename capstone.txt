@@ -1,0 +1,7 @@
+In this case, we are interested in correlation not in causality. This is so because, for a given car and driver, we want to be able to detect counterband, not to address its causes in order to prevent it from happening. For example, if male drivers have a higher rate of counterband activity than female drivers, it doesn't necessarily mean (and probably doesn't!) that gender is causing counterband. Nevertheless our algorithm should place a higher (weight) risk on male drivers because it will be more likely to find counterband in the car if the driver is a man. 
+
+taxas de inspecção por grupo e comparação com o a taxa de representação desse grupo na população (com inspecção aleatória as duas deveriam ser idênticas).
+
+taxas de detecção por grupos (por exemplo, se houver racismo os brancos/pretos deverão ter uma taxa de detecção mais reduzida porque estão a ser mais inspeccionados mesmo sem haver razões objectivas para isso).
+
+correlação das diferentes características (sexo, raça, etnia, idade,...) com a detecção de contrabando.

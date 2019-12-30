@@ -104,9 +104,9 @@ venv.bak/
 .mypy_cache/
 ~$bootcamp_status.xlsx
 
-#Hackathon 5 training data
-"/S05 - Recommender Systems/\HCKT05 - Building a Sports Products Recommender System/data"
+#Hackathon #5 training data
+S05 - Recommender Systems/HCKT05 - Building a Sports Products Recommender System/data/train_reviews.csv
 
 # Capstone train data
 Capstone/data/train.csv
-S05 - Recommender Systems/HCKT05 - Building a Sports Products Recommender System/data/train_reviews.csv
+

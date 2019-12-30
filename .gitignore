@@ -105,4 +105,4 @@ venv.bak/
 ~$bootcamp_status.xlsx
 
 # Capstone train data
-.\Capstone\data\train.csv
+.\capstone_project\data\train.csv

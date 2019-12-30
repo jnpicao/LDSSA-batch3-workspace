@@ -109,3 +109,4 @@ venv.bak/
 
 # Capstone train data
 Capstone/data/train.csv
+S05 - Recommender Systems/HCKT05 - Building a Sports Products Recommender System/data/train_reviews.csv

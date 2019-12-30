@@ -109,3 +109,4 @@ venv.bak/
 
 # Capstone train data
 .\Capstone\data\train.csv
+Capstone/data/train.csv

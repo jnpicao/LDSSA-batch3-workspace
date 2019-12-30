@@ -105,8 +105,7 @@ venv.bak/
 ~$bootcamp_status.xlsx
 
 #Hackathon 5 training data
-".\S05 - Recommender Systems\HCKT05 - Building a Sports Products Recommender System\data\"
+"/S05 - Recommender Systems/\HCKT05 - Building a Sports Products Recommender System/data"
 
 # Capstone train data
-.\Capstone\data\train.csv
 Capstone/data/train.csv

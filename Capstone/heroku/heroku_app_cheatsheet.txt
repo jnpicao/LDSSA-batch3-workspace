@@ -1,0 +1,15 @@
+"C:\Program Files (x86)\heroku\bin\heroku"
+login
+git:remote -a heroku-app-model-deploy
+stack:set container
+logs -n 5
+
+git push heroku master
+
+curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d 
+
+curl -X POST https://heroku-app-model-deploy.herokuapp.com/update -H "Content-Type:application/json" -d "{\"id\": 16, \"true_class\": 1}"
+
+
+
+How does all of this work you ask? Well it has to do with the fact that there exists a Dockerfile and heroku.yml files in this repo. Just be sure that both of these are in your repo and that they are committed before you heroku push and everything should work.

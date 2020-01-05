@@ -1,12 +1,42 @@
-"C:\Program Files (x86)\heroku\bin\heroku"
-login
-git:remote -a heroku-app-model-deploy
-stack:set container
-logs -n 5
+Go to "https://github.com/jnpicao/heroku-app-model-deploy"
 
-git push heroku master
+From "C:\Users\jnpicao\Documents\GitHub\batch3-workspace\Capstone\heroku" upload the following files:
+columns.json
+dtypes.pickle
+pipeline.pickle
+app.py (if has been changed)
 
-curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d 
+Go to GitDesktop repository "heroku-app-model-deploy" and pull from origin
+
+
+Go to Windows cmd prompt
+
+go to the model folder
+C:\Users\jnpicao>cd "C:\Users\jnpicao\Documents\GitHub\heroku-app-model-deploy"
+
+heroku login
+C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" login
+
+Não sei o que faz
+C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" git:remote -a heroku-app-model-deploy
+
+Não sei o que faz
+C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" stack:set container
+
+C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" logs -n 5
+
+Actualizar os ficheiros
+C:\...\heroku-app-model-deploy>git push heroku master
+
+Wait for a while...
+
+
+Go to Anaconda prompt
+
+curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d  "{\"id\": 33, \"observation\": {\"Department Name\":\"State Police\",\"InterventionDateTime\":\"03\/20\/2015 12:49:00 PM\",\"InterventionLocationName\":\"WATERTOWN           \",\"InterventionReasonCode\":\"E\",\"ReportingOfficerIdentificationID\":\"1000002596\",\"ResidentIndicator\":true,\"SearchAuthorizationCode\":\"O\",\"StatuteReason\":\"Other\/Error\",\"SubjectAge\":20.0,\"SubjectEthnicityCode\":\"N\",\"SubjectRaceCode\":\"W\",\"SubjectSexCode\":\"M\",\"TownResidentIndicator\":false}}"
+
+
+
 
 curl -X POST https://heroku-app-model-deploy.herokuapp.com/update -H "Content-Type:application/json" -d "{\"id\": 16, \"true_class\": 1}"
 

@@ -1,3 +1,5 @@
+Heroku pass: rtyu5678.
+
 Go to "https://github.com/jnpicao/heroku-app-model-deploy"
 
 From "C:\Users\jnpicao\Documents\GitHub\batch3-workspace\Capstone\heroku" upload the following files:
@@ -5,6 +7,7 @@ columns.json
 dtypes.pickle
 pipeline.pickle
 app.py (if has been changed)
+setup.py (if has been changed)
 
 Go to GitDesktop repository "heroku-app-model-deploy" and pull from origin
 
@@ -12,33 +15,59 @@ Go to GitDesktop repository "heroku-app-model-deploy" and pull from origin
 Go to Windows cmd prompt
 
 go to the model folder
-C:\Users\jnpicao>cd "C:\Users\jnpicao\Documents\GitHub\heroku-app-model-deploy"
+cd "C:\Users\jnpicao\Documents\GitHub\heroku-app-model-deploy"
 
 heroku login
-C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" login
+"C:\Program Files (x86)\heroku\bin\heroku" login
+
+Não sei o que faz - Cria o repositório Git no Heroku
+"C:\Program Files (x86)\heroku\bin\heroku" git:remote -a heroku-app-model-deploy
 
 Não sei o que faz
-C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" git:remote -a heroku-app-model-deploy
+"C:\Program Files (x86)\heroku\bin\heroku" stack:set container
 
-Não sei o que faz
-C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" stack:set container
+"C:\Program Files (x86)\heroku\bin\heroku" logs -n 5
 
-C:\...\heroku-app-model-deploy>"C:\Program Files (x86)\heroku\bin\heroku" logs -n 5
-
-Actualizar os ficheiros
-C:\...\heroku-app-model-deploy>git push heroku master
+Actualizar os ficheiros (push dos ficheiros da pasta para o heroku)
+git push heroku master
 
 Wait for a while...
+
+If need to restart the app
+"C:\Program Files (x86)\heroku\bin\heroku" restart
+
+
 
 
 Go to Anaconda prompt
 
-curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d  "{\"id\": 33, \"observation\": {\"Department Name\":\"State Police\",\"InterventionDateTime\":\"03\/20\/2015 12:49:00 PM\",\"InterventionLocationName\":\"WATERTOWN           \",\"InterventionReasonCode\":\"E\",\"ReportingOfficerIdentificationID\":\"1000002596\",\"ResidentIndicator\":true,\"SearchAuthorizationCode\":\"O\",\"StatuteReason\":\"Other\/Error\",\"SubjectAge\":20.0,\"SubjectEthnicityCode\":\"N\",\"SubjectRaceCode\":\"W\",\"SubjectSexCode\":\"M\",\"TownResidentIndicator\":false}}"
+curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d  
+
+"{\"id\": 33, \"observation\": {\"Department Name\":\"State Police\",\"InterventionDateTime\":\"03\/20\/2015 12:49:00 PM\",\"InterventionLocationName\":\"WATERTOWN           \",\"InterventionReasonCode\":\"E\",\"ReportingOfficerIdentificationID\":\"1000002596\",\"ResidentIndicator\":true,\"SearchAuthorizationCode\":\"O\",\"StatuteReason\":\"Other\/Error\",\"SubjectAge\":20.0,\"SubjectEthnicityCode\":\"N\",\"SubjectRaceCode\":\"W\",\"SubjectSexCode\":\"M\",\"TownResidentIndicator\":false}}"
 
 
 
 
-curl -X POST https://heroku-app-model-deploy.herokuapp.com/update -H "Content-Type:application/json" -d "{\"id\": 16, \"true_class\": 1}"
+curl -X POST https://heroku-app-model-deploy.herokuapp.com/update -H "Content-Type:application/json" -d 
+"{\"id\": 16, \"true_class\": 1}"
+
+
+
+https://sqliteonline.com/
+SELECT * FROM prediction;
+
+
+Dúvidas:
+
+- O modelo fica a trabalhar mesmo se encerrarmos o nosso PC? Como inicío e termino o modelo?
+- Como recuperamos a base de dados que o modelo vai gravando?
+- Connect to database: DB = SqliteDatabase('predictions.db')
+  If the file 'predictions.db' doesn't exit will it be created? If it exists how can we clear the database? 
+- Model working as expected! How do I know that my model is really going to work in production? Shouldn't we have like a test day receiving requests to see how ir goes?
+- PostgresqlDatabase?????
+- PostgresqlDatabase doesn't seem to be updating. Always with 2 rows.
+- In the app: 'observation=request.data' or should it be 'observation=observation'?
+
 
 
 

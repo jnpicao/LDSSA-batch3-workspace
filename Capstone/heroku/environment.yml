@@ -13,6 +13,9 @@ dependencies:
   - category_encoders=2.0.0
   - flask=1.0.2
   - peewee=3.10.0
-  - gunicorn=20.0.0
   - psycopg2=2.8.4
+  - pip
+  - pip:
+    - -e .
+    - gunicorn==20.0.0
   

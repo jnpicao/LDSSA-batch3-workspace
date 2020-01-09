@@ -1,0 +1,80 @@
+
+TOP importance:
+
+Fairness
+
+Discrimination
+
+
+Group fairness: “It is a requirement that the protected groups should be treated similarly to the advantaged group or the population as a whole.” “Do the outcomes of a decision-making system systematically differ between social salient groups?”. 
+
+ their outcomes can disproportionately hurt (or, benefit) particular groups of people sharing one or more sensitive attributes (e.g., race, sex).
+
+we want the classifier to have the same behavior and performance among each of the protected classes.
+
+In other words,  we believe the intention is to have a process which shows the same behavior and performance among each of the protected classes.
+
+In other words, accepting a bias in the search criterion might be fair and justifiable if the evidence shows us that search findings are actually more likely in those classes we have bias against..
+
+Regarding all the other features that have not been used.
+
+we have already justified its exclusion as a first attempt to have a fair model
+
+Hoje:
+
+Terminar Modeling - Known issues and risks (mais algum risco?)
+Terminar: Modeling - Alternatives considered (Testar as alternativas propostas)
+Terminar: Modeling - Model specifications (Grid-search com cross validation)
+Estudar fairness
+
+Amanhã:
+
+Validar o desempenho do modelo quanto ao 2º requirement
+Analysis of expected outcomes
+Completar Fairness em Business questions analysis
+
+
+remane_columns_dict = {'VehicleSearchedIndicator': 'search', 
+                       'ContrabandIndicator': 'target', 
+                       'Department Name': 'departm',
+                       'InterventionDateTime': 'date',
+                       'InterventionLocationName': 'local',
+                       'InterventionReasonCode': 'reason',
+                       'ReportingOfficerIdentificationID': 'officerID',
+                       'ResidentIndicator': 'state_res',
+                       'SearchAuthorizationCode': 'search_reason',
+                       'StatuteReason': 'stop_reason',
+                       'SubjectAge': 'age',
+                       'SubjectEthnicityCode': 'ethnic',
+                       'SubjectRaceCode': 'race',
+                       'SubjectSexCode': 'sex',
+                       'TownResidentIndicator': 'town_res'
+                      }
+
+
+Pipe: 'Department Name', 'SearchAuthorizationCode', 'StatuteReason', 'SubjectAge'
+
+among blacks, how many are searched?
+
+
+
+
+search           bool
+target           bool
+departm          object
+date             datetime64[ns]
+local            object
+reason           object
+officerID        object
+state_res        bool
+search_reason    object
+stop_reason      object
+age              float64
+ethnic           object
+race             object
+sex              object
+town_res         bool
+
+
+
+Vacinas a considerar:  Hepatite A, Hepatite B,  Cólera, Raiva e e Febre Tifóide,

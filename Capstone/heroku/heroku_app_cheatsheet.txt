@@ -1,6 +1,7 @@
 https://data.heroku.com/
 Heroku pass: rtyu5678.
 
+https://dashboard.heroku.com/apps/heroku-app-model-deploy
 
 
 Go to "https://github.com/jnpicao/heroku-app-model-deploy"
@@ -46,13 +47,46 @@ Go to Anaconda prompt
 
 curl -X POST https://heroku-app-model-deploy.herokuapp.com/predict -H "Content-Type:application/json" -d  
 
-"{\"id\": 33, \"observation\": {\"Department Name\":\"State Police\",\"InterventionDateTime\":\"03\/20\/2015 12:49:00 PM\",\"InterventionLocationName\":\"WATERTOWN           \",\"InterventionReasonCode\":\"E\",\"ReportingOfficerIdentificationID\":\"1000002596\",\"ResidentIndicator\":true,\"SearchAuthorizationCode\":\"O\",\"StatuteReason\":\"Other\/Error\",\"SubjectAge\":20.0,\"SubjectEthnicityCode\":\"N\",\"SubjectRaceCode\":\"W\",\"SubjectSexCode\":\"M\",\"TownResidentIndicator\":false}}"
+"{\"id\": 99001, \"observation\": {\"Department Name\":\"State Police\",\"InterventionDateTime\":\"03\/20\/2015 12:49:00 PM\",\"InterventionLocationName\":\"WATERTOWN           \",\"InterventionReasonCode\":\"E\",\"ReportingOfficerIdentificationID\":\"1000002596\",\"ResidentIndicator\":true,\"SearchAuthorizationCode\":\"O\",\"StatuteReason\":\"Other\/Error\",\"SubjectAge\":20.0,\"SubjectEthnicityCode\":\"N\",\"SubjectRaceCode\":\"W\",\"SubjectSexCode\":\"M\",\"TownResidentIndicator\":false}}"
 
 
 
 
 curl -X POST https://heroku-app-model-deploy.herokuapp.com/update -H "Content-Type:application/json" -d 
 "{\"id\": 16, \"true_class\": 1}"
+
+
+
+
+
+
+Reset the database
+
+1) go to https://data.heroku.com/
+2) Select postgresql-cubed-97906
+3) Select Settings
+4) Select "Reset Database..."
+
+
+Download database
+
+1) go to https://data.heroku.com/
+2) Select postgresql-cubed-97906
+3) Select Dataclips
+
+
+Retrieve Logs from cmd line
+
+"C:\Program Files (x86)\heroku\bin\heroku" logs 
+"C:\Program Files (x86)\heroku\bin\heroku" logs -n 20
+"C:\Program Files (x86)\heroku\bin\heroku" logs --tail
+"C:\Program Files (x86)\heroku\bin\heroku" logs --source app
+"C:\Program Files (x86)\heroku\bin\heroku" logs --source router
+"C:\Program Files (x86)\heroku\bin\heroku" logs --source heroku
+
+
+
+
 
 
 
